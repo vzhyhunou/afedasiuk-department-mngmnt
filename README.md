@@ -8,7 +8,7 @@ Department Management demo application
 Setup java 8 and Maven, see [enviroment_setup.md](enviroment_setup.md) 
   
     
-### build project 
+## Build project 
 Goto Project folder and execute  
     
     mvn clean install
