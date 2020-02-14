@@ -1,12 +1,12 @@
-Update packages
+### Update packages
 
     ~$ sudo apt update
 
-Install OpenJDK 8
+### Install OpenJDK 8
 
     ~$ sudo apt install openjdk-8-jdk   
    
-Verify
+### Verify
 
     ~$ java -version
 
@@ -14,7 +14,7 @@ Verify
 
     ~$ sudo apt install maven
 
-Verify maven installation
+### Verify maven installation
 
     ~$ mvn -version
 
