@@ -8,4 +8,12 @@ public interface DepartmentDao {
 
     List<Department> getDepartments();
 
+    Department getDepartmentById(Integer departmentId);
+
+    Department addDepartment(Department department);
+
+    void updateDepartment(Department department);
+
+    void deleteDepartment(Integer departmentId);
+
 }
