@@ -13,9 +13,27 @@
 <body>
 
 <header>
-    <nav>
-        <a href="departments.html">Departments</a>
-        <a href="employees.html">Employees</a>
+    <nav class="pl-2 navbar navbar-expand-sm navbar-dark bg-dark text-light  p-0">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="index.html" class="navbar-brand"><img src="img/logo.svg" height="32" width="32" alt="HR"></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <a class="nav-item nav-link active" href="departments.html">Departments</a>
+                <a class="nav-item nav-link" href="employees.html">Employees</a>
+            </ul>
+        </div>
+    </nav>
+    <nav id="main-header"
+         class="py-1 mb-3 navbar navbar-expand-sm navbar-light bg-light text-dark">
+
+        <ul class="navbar-nav float-lg-left">
+            <li class="nav-item"
+                title="Back to list"><a href="departments.html" class="btn btn-light btn-block"><i
+                    class="fa fa-arrow-left"></i></a></li>
+        </ul>
+        <span class="navbar-brand text-uppercase mr-auto">Edit department</span>
     </nav>
     <a href="departments.html">Back</a>
     <h1>Edit Department</h1>
