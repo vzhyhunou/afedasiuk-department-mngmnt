@@ -1,6 +1,7 @@
 package com.epam.brest.courses.dao;
 
 import com.epam.brest.courses.model.Department;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,7 +16,6 @@ import static com.epam.brest.courses.constants.DepartmentConstants.DEPARTMENT_NA
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import org.apache.commons.lang3.RandomStringUtils;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(locations = {"classpath*:test-db.xml", "classpath*:test-dao.xml", "classpath:dao.xml"})
@@ -62,7 +62,25 @@ public class DepartmentJdbcDaoImplIT {
     }
 
     @Test
-    public void deleteDepartment() {
+    public void shouldDeleteDepartment() {
+        // given
+        Department department = new Department()
+                .setDepartmentName(RandomStringUtils.randomAlphabetic(DEPARTMENT_NAME_SIZE));
+        Integer id = departmentDao.create(department);
+
+        List<Department> departments = departmentDao.findAll();
+        assertNotNull(departments);
+
+        // when
+        int result = departmentDao.delete(id);
+
+        // then
+        assertTrue(result == 1);
+
+        List<Department> currentDepartments = departmentDao.findAll();
+        assertNotNull(currentDepartments);
+
+        assertTrue(departments.size()-1 == currentDepartments.size());
     }
 
 }
