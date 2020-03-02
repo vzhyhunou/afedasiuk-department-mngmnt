@@ -21,9 +21,9 @@ import java.util.Optional;
 
 import static com.epam.brest.courses.constants.DepartmentConstants.*;
 
-public class DepartmentJdbcDaoImpl implements DepartmentDao {
+public class DepartmentDaoJdbc implements DepartmentDao {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(DepartmentJdbcDaoImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(DepartmentDaoJdbc.class);
 
 
     @Value("${department.select}")
@@ -45,7 +45,7 @@ public class DepartmentJdbcDaoImpl implements DepartmentDao {
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    public DepartmentJdbcDaoImpl(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+    public DepartmentDaoJdbc(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
