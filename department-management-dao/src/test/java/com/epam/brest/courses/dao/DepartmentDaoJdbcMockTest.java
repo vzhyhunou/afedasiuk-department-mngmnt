@@ -23,10 +23,10 @@ import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class DepartmentJdbcDaoImplMockTest {
+public class DepartmentDaoJdbcMockTest {
 
     @InjectMocks
-    private DepartmentJdbcDaoImpl departmentDao;
+    private DepartmentDaoJdbc departmentDao;
 
     @Mock
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
@@ -53,7 +53,7 @@ public class DepartmentJdbcDaoImplMockTest {
         when(rs.getInt(anyString())).thenReturn(id);
         when(rs.getString(anyString())).thenReturn(name);
 
-        List<Department> departments = departmentDao.getDepartments();
+        List<Department> departments = departmentDao.findAll();
         assertNotNull(departments);
         assertEquals(1, departments.size());
         Department dep = departments.get(0);
