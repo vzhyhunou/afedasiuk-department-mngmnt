@@ -9,8 +9,10 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 
+import static com.epam.brest.courses.constants.DepartmentConstants.DEPARTMENT_NAME_SIZE;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.apache.commons.lang3.RandomStringUtils;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(locations = {"classpath*:test-db.xml", "classpath*:test-dao.xml", "classpath:dao.xml"})
@@ -32,7 +34,11 @@ public class DepartmentJdbcDaoImplIT {
     }
 
     @Test
-    public void addDepartment() {
+    public void shouldCreateDepartment() {
+        Department entity = new Department()
+                .setDepartmentName(RandomStringUtils.randomAlphabetic(DEPARTMENT_NAME_SIZE));
+        Integer id = departmentDao.create(entity);
+        assertNotNull(id);
     }
 
     @Test
