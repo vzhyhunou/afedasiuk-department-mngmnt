@@ -12,7 +12,7 @@
     <modules>
         <module>department-management-model</module>
         <module>department-management-dao</module>
-        <module>department-management-test</module>
+        <module>department-management-test-db</module>
         <module>department-management-web-app</module>
         <module>departent-management-service</module>
         <module>departent-management-service-api</module>
@@ -64,9 +64,8 @@
 
             <dependency>
                 <groupId>com.epam.brest.courses</groupId>
-                <artifactId>department-management-test</artifactId>
+                <artifactId>department-management-test-db</artifactId>
                 <version>${project.version}</version>
-                <scope>test</scope>
             </dependency>
 
             <dependency>
