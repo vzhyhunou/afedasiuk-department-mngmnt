@@ -75,6 +75,7 @@ class DepartmentControllerIT {
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType("text/html;charset=UTF-8"))
                 .andExpect(view().name("department"))
+                .andExpect(model().attribute("isNew", is(false)))
                 .andExpect(model().attribute("department", hasProperty("departmentId", is(1))))
                 .andExpect(model().attribute("department", hasProperty("departmentName", is("DEV"))));
     }
@@ -105,5 +106,17 @@ class DepartmentControllerIT {
         ).andExpect(status().isFound())
                 .andExpect(view().name("redirect:/departments"))
                 .andExpect(redirectedUrl("/departments"));
+    }
+
+    @Test
+    public void shouldOpenNewDepartmentPage() throws Exception {
+        mockMvc.perform(
+                MockMvcRequestBuilders.get("/department")
+        ).andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().contentType("text/html;charset=UTF-8"))
+                .andExpect(view().name("department"))
+                .andExpect(model().attribute("isNew", is(true)))
+                .andExpect(model().attribute("department", isA(Department.class)));
     }
 }
