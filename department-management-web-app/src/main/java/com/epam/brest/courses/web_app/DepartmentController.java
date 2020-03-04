@@ -89,4 +89,18 @@ public class DepartmentController {
         model.addAttribute("department", new Department());
         return "department";
     }
+
+    /**
+     * Persist new department into persistence storage.
+     *
+     * @param department new department with filled data.
+     * @return view name
+     */
+    @PostMapping(value = "/department")
+    public String addDepartment(Department department) {
+
+        LOGGER.debug("addDepartment({})", department);
+        this.departmentService.create(department);
+        return "redirect:/departments";
+    }
 }

@@ -119,4 +119,16 @@ class DepartmentControllerIT {
                 .andExpect(model().attribute("isNew", is(true)))
                 .andExpect(model().attribute("department", isA(Department.class)));
     }
+
+    @Test
+    public void shouldAddNewDepartment() throws Exception {
+
+        mockMvc.perform(
+                MockMvcRequestBuilders.post("/department")
+                        .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+                        .param("departmentName", "test")
+        ).andExpect(status().isFound())
+                .andExpect(view().name("redirect:/departments"))
+                .andExpect(redirectedUrl("/departments"));
+    }
 }
