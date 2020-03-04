@@ -19,6 +19,22 @@
             <groupId>com.epam.brest.courses</groupId>
             <artifactId>department-management-model</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.epam.brest.courses</groupId>
+            <artifactId>department-management-test-db</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.brest.courses</groupId>
+            <artifactId>departent-management-dao</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.brest.courses</groupId>
+            <artifactId>departent-management-service-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.brest.courses</groupId>
+            <artifactId>departent-management-service</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -71,6 +87,7 @@
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>

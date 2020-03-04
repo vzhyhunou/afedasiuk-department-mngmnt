@@ -40,6 +40,12 @@
 
             <dependency>
                 <groupId>com.epam.brest.courses</groupId>
+                <artifactId>department-management-test-db</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.epam.brest.courses</groupId>
                 <artifactId>departent-management-dao</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -52,19 +58,13 @@
 
             <dependency>
                 <groupId>com.epam.brest.courses</groupId>
-                <artifactId>department-management-service</artifactId>
+                <artifactId>departent-management-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.epam.brest.courses</groupId>
                 <artifactId>department-management-web-app</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.epam.brest.courses</groupId>
-                <artifactId>department-management-test-db</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
