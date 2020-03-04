@@ -103,4 +103,18 @@ public class DepartmentController {
         this.departmentService.create(department);
         return "redirect:/departments";
     }
+
+
+    /**
+     * Delete department.
+     *
+     * @return view name
+     */
+    @GetMapping(value = "/department/{id}/delete")
+    public final String deleteDepartmentById(@PathVariable Integer id, Model model) {
+
+        LOGGER.debug("delete({},{})", id, model);
+        departmentService.delete(id);
+        return "redirect:/departments";
+    }
 }
