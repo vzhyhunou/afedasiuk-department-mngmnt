@@ -6,11 +6,12 @@
 
     <parent>
         <groupId>com.epam.brest.courses</groupId>
-        <artifactId>departent-management</artifactId>
+        <artifactId>department-management</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>departent-management-dao</artifactId>
+    <artifactId>department-management-dao</artifactId>
 
     <dependencies>
         <dependency>
